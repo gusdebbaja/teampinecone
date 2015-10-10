@@ -14,8 +14,8 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
  
-    <!-- Custom CSS -->
-    <link href="css/2-col-portfolio.css" rel="stylesheet">
+    <!-- Custom CSS 
+    <link href="css/2-col-portfolio.css" rel="stylesheet">-->
  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,25 +25,53 @@
    <![endif]-->
 
     <style>
+    .masthead {
+        background-color: @brand-primary;
+    }
     
     .page-header{
         padding-top: 20px;
     }   
 
-    .dropdown{
-        position: relative;
-
+    .jumbatron{
+        padding-top: 60px;
     }
 
+    
+    .navbar-default {
+        background-color: #337ab7;
+    }
+
+    .navbar-default .navbar-brand {
+        color: white;
+    }
+
+    .navbar-default .navbar-brand:hover,
+    .navbar-default .navbar-brand:focus {
+        color: black;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        color: white;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+        color: black;
+    }
+    
+
+    .dropdown{
+        position: relative;
+    }
     </style>
 
- 
 </head>
- 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Navigation-->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- container #1-->
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -55,41 +83,15 @@
                 </button>
                 <a class="navbar-brand" href="#">FANTASY#</a>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <!--<div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 Previous Leaderboards
-                            <span class="caret"></span>
-                                </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <li><a href="#">Week 43</a></li>
-                                        <li><a href="#">Week 42</a></li>
-                                         <li><a href="#">Week 41</a></li>
-                                         <li><a href="#">Week 40 (or all other leaderboards)</a></li>
-                                    </ul>
-                                    </div> 
-                                    </li>-->
-
-<!-- Small modal -->
-<a class="btn" data-controls-modal="myModal" data-target="#myModal">Sign Up</a>
-
-    <div class="modal" id="myModal">
-        <div class="modal-header">
-            <button class="close" data-dismiss="modal">×</button>
-                <h3>Modal header</h3>
-        </div>
-                    <div class="modal-body">
-                        <p>One fine body…</p>
-                    </div>
-                        <div class="modal-footer">
-                            <a href="#" class="btn">Close</a>
-                            <a href="#" class="btn btn-primary">Save changes</a>
-                        </div>
-        </div>
-
+                    <li>
+                        <a href="#signup" data-toggle = "modal" data-target="#signup">Sign Up</a>
+                        </li>
+ 
                     <li>
                         <a href="#">About</a>
                     </li>
@@ -101,7 +103,16 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
+
     </nav>
+
+                <div class="jumbatron">
+            <!-- container #2-->
+                <div class="container">
+                    <h1>Welcome to FANTASY#</h1>
+                    <h3>A Game for All the Hashtagers</h3>
+                </div>
+            </div>
  
     <!-- Page Content -->
     <div class="container">
@@ -220,15 +231,25 @@
             </div>
             <!-- /.row -->
         </footer>
- 
+
+                <div class="modal fade" id="signup">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">This is the heading</h3>
+                        <div class="modal-body">
+                        <button type="button" class="btn btn-primary">Sign In With Twitter </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
     <!-- /.container -->
  
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
- 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap.min.js"/>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
  
 </body>
  
