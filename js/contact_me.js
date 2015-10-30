@@ -23,7 +23,7 @@ $(function() {
 	   firstName = name.split(' ').slice(0, -1).join(' ');
          }
 	 $.ajax({
-                url: "bin/contact_me.php",
+                url: "http://fantasyhashtag.me/bin/contact_me.php",
             	type: "POST",
             	data: {name: name, email: email, message: message},
             	cache: false,
