@@ -1,0 +1,59 @@
+indx
+
+$auth = new TwitterAuth($client);
+
+?>
+
+#<?php if($auth->signedIn()); ?>
+#  <p>You are signed in. <a href="signout.php">Signout</a></p>
+#<?php else: ?>
+#  <p><a href="<?php echo $auth->getAuthUrl(); ?>">Sign in with Twitter</a></p>
+#<?php endif;  ?>
+
+
+callback
+
+$auth = new TwitterAuth($client);
+
+if($auth->signIn())
+{
+  header('Location: index.php');
+}
+else
+{
+  die('Sign in failed');
+}
+
+TwitterAuth
+
+public function signedIn()
+{
+  return isset($_SESSION['user_id']);
+}
+
+public function signIn()
+{
+  if($this->hasCallback())
+  {
+    $this->verifyTokens();
+
+    $reply = $this->clien->oauth_accessToken([
+        'oauth_verifier' => $_GET['oauth_verifier']
+      ]);
+
+      if($reply->httpstatus === 200)
+      {
+
+        $this->storeTokens($reply->oauth_token, $reply->oauth_token_secret);
+
+        $_SESSION['user_id'] $reply->user_id;
+
+        //Store the user here
+
+        return true;
+      }
+
+  }
+
+  return false;
+}
