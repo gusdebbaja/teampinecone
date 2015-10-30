@@ -4,7 +4,7 @@ class TwitterAuth
 {
   protected $client;
 
-  protected $clientCallback = 'http://local.dev:80/fantasyhashtag/callback.php';
+  protected $clientCallback = 'http://www.fantasyhashtag.me/callback.php';
 
   public function __construct(\Codebird\Codebird $client)
   {
