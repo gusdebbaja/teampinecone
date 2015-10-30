@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  
+
 <head>
  
     <meta charset="utf-8">
@@ -69,7 +70,12 @@
 </head>
 
 <body>
+ <?php
+require_once 'app/init.php';
 
+$auth = new TwitterAuth($client);
+
+?>
     <!-- Navigation-->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <!-- container #1-->
@@ -89,9 +95,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                    <li>
-                        <a href="#signup" data-toggle = "modal" data-target="#signup">Sign Up</a>
-                        </li>
+                    
  
                     <li>
                         <a href="#">About</a>
@@ -100,8 +104,17 @@
                         <a href="contact.html">Contact</a>
                     </li>
                     <li>
+                    <?php if($auth->signedIn()): ?>
                         <a href="profile.html">Profile</a>
+                        <?php endif; ?>
                     </li>
+                    <li>       <?php if($auth->signedIn()): ?>
+  <a href="signout.php">Sign Out</a>
+
+<?php else: ?>
+  <a href="<?php echo $auth->getAuthUrl(); ?>">Sign In </a>
+<?php endif; ?>
+                        </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -244,7 +257,9 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h3 class="modal-title">This is the heading</h3>
                         <div class="modal-body">
-                        <button href="https://api.twitter.com/oauth/authenticate?oauth_token=cHdlmPofsk0WTmqottg7jFlU9nfDHLj6pYusAVPmQ" type="button" class="btn btn-primary">Sign In With Twitter </button>
+                
+
+                       
                     </div>
                 </div>
             </div>
