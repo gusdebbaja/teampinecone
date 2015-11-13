@@ -82,7 +82,7 @@ handle_info({http, {_RequestId, stream, BinBodyPart}}, State) ->
         TweetPart = lists:append(State#state.tweet, [BinBodyPart]),
         Tweet = << <<B/bits>> || B <- TweetPart >>,
 
-        % Sergiu : ==================
+        % Pinecone : ==================
         JSONTweet = json:from_binary(Tweet),
 
         TW_Text = json:get([text], JSONTweet),
@@ -94,7 +94,7 @@ handle_info({http, {_RequestId, stream, BinBodyPart}}, State) ->
 
         sendToNodeJS(FinalList),
 
-        % End Sergiu : ==================
+        % End Pinecone : ==================
 
         {noreply, State#state{tweet = []}}
     end;
@@ -108,7 +108,7 @@ terminate(_Reason, _State) ->
 code_change(_OldVsn, State, _Extra) ->
     {ok, State}.
 
-% Sergiu : ==================
+% Pinecone : ==================
 sendToNodeJS(TheList) ->
     Url = ?NODEJS_TWEET_POST_URL,
     Method = post,
@@ -129,4 +129,4 @@ sendToNodeJS(TheList) ->
             %io:format("Code: ~p~n", [_ReturnCode]),
             true
     end.
-% End Sergiu : ==================
+% End Pinecone : ==================
