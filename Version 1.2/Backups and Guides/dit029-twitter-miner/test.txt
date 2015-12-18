@@ -1,0 +1,2 @@
+Eshell V5.10.4  (abort with ^G)
+1> 
