@@ -1,0 +1,10 @@
+{application,certifi,
+             [{description,"An OTP library"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {env,[]},
+              {modules,[certifi,certifi_pemcerts]},
+              {contributors,[]},
+              {licenses,[]},
+              {links,[]}]}.
