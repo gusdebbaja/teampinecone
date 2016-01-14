@@ -1,0 +1,19 @@
+{application, twitterminer,
+ [
+  {description, ""},
+  {vsn, "0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  asn1,
+                  crypto,
+                  public_key,
+                  ibrowse,
+                  ssl,
+                  idna,
+                  hackney,
+                  couchbeam]},
+  %{mod, { twitterminer_app, []}},
+  {env, []}
+ ]}.

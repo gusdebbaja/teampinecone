@@ -1,0 +1,8 @@
+peb.lo: /home/ubuntu/workspace/mypeb-master/peb.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/ubuntu/workspace/mypeb-master $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/ubuntu/workspace/mypeb-master/peb.c -o peb.lo 
+$(phplibdir)/peb.la: ./peb.la
+	$(LIBTOOL) --mode=install cp ./peb.la $(phplibdir)
+
+./peb.la: $(shared_objects_peb) $(PEB_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_peb) $(PEB_SHARED_LIBADD)
+
