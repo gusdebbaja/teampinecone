@@ -6,9 +6,6 @@ http://garak.skip.chalmers.se:5984/_utils/
 Connect to website:
 https://pinecone-bryndlir.c9users.io/Front/Website/index.php
 
-Connect to server website: (Not main website)
-http://garak.skip.chalmers.se/
-
 Server Information
 group: pinecone
 
