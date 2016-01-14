@@ -1,4 +1,0 @@
-language: erlang
-otp_release:
-   - R16B
-script: "make test"
